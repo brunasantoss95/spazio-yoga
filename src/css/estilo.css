@@ -1,0 +1,477 @@
+.gabriela-regular {
+    font-family: "Gabriela", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body{
+    font-family: 'Gabriela', serif;
+    background-color: black;
+    margin: 0;
+    color: #fff;
+}
+
+h1{
+  text-align: center;
+  color: #E8ACFD;
+}
+h2{
+    color: #9A9FE3; 
+    font-size: 40px; 
+}
+
+h3 {
+    color: #E8ACFD;
+    font-size: 25px;
+    margin-left: 150px;
+  }
+
+p {
+    color: #C4B7F9;
+    font-size: 15px;
+    text-align: justify;
+  }
+
+  /*menu*/
+  .container{
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav a{
+    font-size: 18px;
+  }
+
+  nav a img {
+    width: 0px;
+    padding: 5px;
+  }
+
+  header{
+    width: 100%;
+    padding: 60px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 1s;
+  }
+
+  header.rolagem{
+    background-color: black;
+    padding: 20px 4%;
+  }
+
+  header.rolagem a{
+    color: #efbbf5 ;
+  }
+
+header ul{
+  list-style-type: none;
+}
+
+header ul li{
+  display: inline-block;
+  margin: 0 40px;
+}
+
+header ul li a{
+  color: #fff;
+  text-decoration: none;
+}
+/*termina menu*/ 
+
+.img-fundo{
+  height: 100vg;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {   
+    -ms-flex: 70%; 
+    flex: 70%;
+    background-color: black;
+    padding: 20px;
+  }
+  
+.home{
+    display: flex;
+    position: relative;
+    min-height: calc(100vh - 80px);
+}
+
+.row {  
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+  }
+
+  .row2 {  
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+  }
+
+  p .side{
+    font-size: 20px; 
+    margin-right: 150px; 
+    color: #C4B7F9;
+    text-align: justify;
+    margin-right: 150px 
+}
+
+.side {
+  -ms-flex: 30%; 
+  flex: 30%;
+  background-color: black;
+  padding: 20px;
+}
+
+.side2 {
+  -ms-flex: 30%; 
+  flex: 30%;
+  background-color: black;
+  padding: 20px;
+}
+
+/* sobre o espaço*/
+.fakeimg1 {
+  background-color: #aaa;
+  padding: 150px 250px ;
+  margin: 50px 150px ;
+  background-image: url("../img/foto3.jpg");
+  opacity: 0.5;
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  float: left;
+  border-radius: 5px;
+}
+
+.sobre{
+  text-align: center; 
+  margin-right: 150px;
+}
+
+/* modalidades */
+.fakeimg2 {
+  background-color: #aaa;
+  padding: 650px 270px ;
+  margin: 50px 150px ;
+  background-image: url("../img/foto4.jpg");
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: bottom;
+  opacity: 0.5;
+  float: right;
+  border-radius: 5px;  
+}
+
+/* Agendar */
+.agendar{
+  background-color: #000000;
+  padding: 50px 150px ;
+  padding-bottom: 200px;
+  margin: 0 ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  border-radius: 5px; 
+}
+
+.agendar img{
+  background-image: url("../img/yoga.png");
+  width: 400px;
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: center;
+  float: left;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+.agendar p{
+  font-size: 22px;
+  text-align: center;
+  float: center;
+  padding: auto;
+}
+
+.btn-agendar button{
+  width: 200px;
+  height: 60px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #efbbf5;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s;
+  font-family: "Gabriela", serif;
+  font-size: 18px;
+  text-align: center;
+  margin-left: 860px;
+}
+
+.btn-modal button{
+  width: 100px;
+  height: 30px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #efbbf5;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s;
+  font-family: "Gabriela", serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Botão 'x' para fechar modal*/
+#id01{
+  width: 200px;
+  height: 80px;
+  align-content: center;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  margin: 5px auto; 
+}
+
+/* Agendar aula*/
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4); 
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  text-align: center;
+  align-content: center;
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #37314A;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 5px auto; 
+  width: 500px;
+  height: 600px;
+}
+
+.cancelbtn button{
+  width: 90px;
+  height: 40px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #4c2051;
+  color: #fff;
+  cursor: pointer;
+  transition: .2s;
+  font-family: "Gabriela", serif;
+  font-size: 16px;
+  opacity: 0.;
+}
+
+.container-agendar input{
+  padding: 10px;
+  border-radius: 10px;
+}
+.container-agendar{
+  font-size: 13px;
+}
+
+/* The Close Button */
+.close {
+  /* Position it in the top right corner outside of the modal */
+  position: absolute;
+  text-align: center;
+  right: 10px;
+  top: 10px;
+  color: rgb(244, 97, 202);
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Close button on hover */
+.close:hover,
+.close:focus {
+  color: rgb(168, 2, 251);
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* termina agendar aula */
+
+
+/* rodapé */
+  .footer {
+    padding: 50px;
+    text-align: center;
+    background-color: #37314A;
+    background-image: linear-gradient(to top, #37314A, black);
+   }
+
+   .redes{
+    text-align: left;
+    padding: 10px 200px;
+    background-repeat: no-repeat;
+   }
+
+   /* JavaScript*/
+   * {box-sizing:border-box}
+
+   
+   /*Responsivo*/
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .row2 {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+
+* {box-sizing:border-box}
+
+
+
+
+
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
