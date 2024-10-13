@@ -34,21 +34,18 @@
 <body>
   <!-- menu -->
   <header id="header">
-    <div class="flex">
-      <a href="#" class="navbar-left" menu>
-        <img src="src/img/logo.png" style="width: 75px;">
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#sobre">Sobre Nós</a></li>
-          <li><a href="#modalidades">Modalidades</a></li>
-          <li><a href="#agendar">Agendar Aula</a></li>
-        </ul>
-      </nav>
-
-
-  </header>
+        <nav class="flex">
+            <a href="#" class="navbar-left menu"><img src="src/img/logo.png" style="width: 75px;"></a>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#modalidades">Modalidades</a></li>
+                <li><a href="#agendar">Agendar Aula</a></li>
+                <li><a href="account.html">Minha Conta</a></li>
+                <li><a href="admin.html" id="admin-link" style="display: none;">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
 
   <section id="home" class="banner"> <img class="img-fundo" src="./src/img/foto1.jpg" style="width: 100%;"></section> 
 
@@ -286,5 +283,7 @@
     </p>
   </div>
 
-
+    <script src="src/js/script.js"></script>
+    <script src="src/js/auth.js"></script>
 </body>
+</html>

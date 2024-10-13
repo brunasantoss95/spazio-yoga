@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Spazio Yoga</title>
+    <link rel="stylesheet" href="src/css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+    <style>
+        .admin-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .admin-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+        h2, h3 {
+            color: #9A9FE3;
+            text-align: center;
+        }
+        .appointment-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .appointment-item {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .appointment-info {
+            flex-grow: 1;
+        }
+        .appointment-actions button {
+            background-color: #E8ACFD;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .appointment-actions button:hover {
+            background-color: #D99BE3;
+        }
+        .no-appointments {
+            text-align: center;
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav class="flex">
+            <a href="index.html" class="navbar-left menu"><img src="src/img/logo.png" style="width: 75px;"></a>
+            <ul>
+                <li><a href="index.html#home">Inicio</a></li>
+                <li><a href="index.html#sobre">Sobre Nós</a></li>
+                <li><a href="index.html#modalidades">Modalidades</a></li>
+                <li><a href="index.html#agendar">Agendar Aula</a></li>
+                <li><a href="account.html">Minha Conta</a></li>
+                <li><a href="admin.html" id="admin-link">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-box">
+            <h2>Admin Dashboard</h2>
+
+            <section>
+                <h3>Criar Nova Aula</h3>
+                <form id="create-class-form">
+                    <input type="text" id="class-name" placeholder="Nome da Aula" required>
+                    <input type="datetime-local" id="class-datetime" required>
+                    <input type="number" id="class-max-students" placeholder="Limite de Alunos" required>
+                    <button type="submit">Criar Aula</button>
+                </form>
+            </section>
+
+            <section>
+                <h3>Todas as Aulas Agendadas</h3>
+                <ul id="all-classes"></ul>
+            </section>
+            <section>
+                <h3>Aulas Disponíveis</h3>
+                <ul id="available-classes"></ul>
+            </section>
+            <section>
+                <h3>Minhas Aulas</h3>
+                <ul id="user-classes"></ul>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="src/js/script.js"></script>
+    <script src="src/js/auth.js"></script>
+    
+</body>
+</html>

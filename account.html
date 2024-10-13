@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta - Spazio Yoga</title>
+    <link rel="stylesheet" href="src/css/estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+    <style>
+        .account-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .account-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .tab-switch {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .tab-switch button {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .tab-switch button.active {
+            background-color: #E8ACFD;
+            color: white;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button[type="submit"] {
+            background-color: #9A9FE3;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button[type="submit"]:hover {
+            background-color: #8286C9;
+        }
+        #user-dashboard {
+            text-align: center;
+        }
+        #user-dashboard ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #user-dashboard li {
+            margin-bottom: 10px;
+        }
+        #logout-button {
+            background-color: #E8ACFD;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #logout-button:hover {
+            background-color: #D99BE3;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav class="flex">
+            <a href="index.html" class="navbar-left menu"><img src="src/img/logo.png" style="width: 75px;"></a>
+            <ul>
+                <li><a href="index.html#home">Inicio</a></li>
+                <li><a href="index.html#sobre">Sobre Nós</a></li>
+                <li><a href="index.html#modalidades">Modalidades</a></li>
+                <li><a href="index.html#agendar">Agendar Aula</a></li>
+                <li><a href="account.html">Minha Conta</a></li>
+                <li><a href="admin.html" id="admin-link" style="display: none;">Admin</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="account-container">
+        <div class="account-box">
+            <div id="login-register">
+                <div class="tab-switch">
+                    <button class="tab-button active" data-tab="login">Entrar</button>
+                    <button class="tab-button" data-tab="register">Registrar</button>
+                </div>
+
+                <form id="login-form" class="tab-content active">
+                    <h2>Entrar</h2>
+                    <input type="text" id="login-username" placeholder="Nome de usuário" required>
+                    <input type="password" id="login-password" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+
+                <form id="register-form" class="tab-content">
+                    <h2>Registrar</h2>
+                    <input type="text" id="register-username" placeholder="Nome de usuário" required>
+                    <input type="password" id="register-password" placeholder="Senha" required>
+                    <button type="submit">Registrar</button>
+                </form>
+            </div>
+
+            <div id="user-dashboard" style="display: none;">
+                <h2>Minha Conta</h2>
+                <p>Bem-vindo, <span id="user-name"></span>!</p>
+
+                <section>
+                    <h3>Aulas Disponíveis</h3>
+                    <ul id="available-classes"></ul>
+                </section>
+
+                <section>
+                    <h3>Minhas Aulas</h3>
+                    <ul id="user-classes"></ul>
+                </section>
+
+                <button id="logout-button">Sair</button>
+            </div>
+        </div>
+    </main>
+    <script src="src/js/auth.js"></script>
+</body>
+</html>
