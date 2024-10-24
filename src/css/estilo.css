@@ -303,6 +303,22 @@ header ul li a{
   font-size: 13px;
 }
 
+.admin {
+  text-align: center;
+  align-content: center;
+  color: white;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #37314A;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 5px auto; 
+  width: 300px;
+  height: 400px;
+}
+
 /* The Close Button */
 .close {
   /* Position it in the top right corner outside of the modal */
