@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // String de conexão do MongoDB
-const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/spazio_yoga';
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost/cadastrar';
 
 // Conectar ao MongoDB
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
