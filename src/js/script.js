@@ -1,20 +1,25 @@
- //Menu
- window.addEventListener("scroll", function(){
-    let header = this.document.querySelector('#header')
-    header.classList.toggle('rolagem',window.scrollY > 0)
-   })
-  
-  // Get the modal
-  var modal = document.getElementById('id01');
-  
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  }
-  
-  /*slides
+//Menu
+window.addEventListener("scroll", function () {
+  let header = this.document.querySelector("#header");
+  header.classList.toggle("rolagem", window.scrollY > 0);
+});
+
+// Close modal
+const modal = document.querySelector('[data-element="modal"]');
+const cancelbtn = document.querySelectorAll('[data-element="close"]');
+
+const closeModal = () => (modal.style.display = "none");
+
+cancelbtn.forEach((btn) => {
+  btn.addEventListener("click", () => closeModal());
+});
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) closeModal();
+};
+
+/*slides
   let slideIndex = 0;
   showSlides();
   
@@ -29,4 +34,3 @@
     slides[slideIndex-1].style.display = "block";
     setTimeout(showSlides, 4000); // Change image every 2 seconds
   }*/
-  

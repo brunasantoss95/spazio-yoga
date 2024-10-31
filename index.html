@@ -222,16 +222,11 @@
     </div>
 
     <!-- O Modal -->
-    <div id="id01" class="modal">
+    <div id="id01" class="modal" data-element="modal">
       <!-- Modal Conteudo -->
       <div class="modal-content animate">
         <!-- Botão 'x' para fechar-->
-        <span
-          onclick="document.getElementById('id01').style.display='none'"
-          class="close"
-          title="Close Modal"
-          >&times;
-        </span>
+        <span class="close" data-element="close" title="Close Modal">&times; </span>
 
         <div class="imgcontainer">
           <img
@@ -254,8 +249,8 @@
             <button
               type="button"
               style="background-color: rgb(39, 6, 39)"
-              onclick="document.getElementById('id01').style.display='none'"
               class="cancelbtn"
+              data-element="close"
             >
               Fechar
             </button>
