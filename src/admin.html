@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Spazio Yoga</title>
+    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon" />
+
+    <!-- fontes-->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap"
+      rel="stylesheet"
+    /> -->
+
+    <link rel="stylesheet" href="./src/css/about.css" />
+    <link rel="stylesheet" href="./src/css/admin.css" />
+    <link rel="stylesheet" href="./src/css/schedule.css" />
+    <link rel="stylesheet" href="./src/css/animations.css" />
+    <link rel="stylesheet" href="./src/css/category.css" />
+    <link rel="stylesheet" href="./src/css/fonts.css" />
+    <link rel="stylesheet" href="./src/css/footer.css" />
+    <link rel="stylesheet" href="./src/css/globals.css" />
+    <link rel="stylesheet" href="./src/css/header.css" />
+    <link rel="stylesheet" href="./src/css/home.css" />
+    <link rel="stylesheet" href="./src/css/ui.css" />
+  </head>
+
+  <body>
+    <!-- menu -->
+    <header id="header">
+      <nav class="flex">
+        <a href="#" class="navbar-left menu"
+          ><img src="src/img/logo.png" style="width: 75px"
+        /></a>
+        <ul>
+          <li><a href="index.html">Voltar</a></li>
+          <li>
+            <a href="admin.html" id="admin-link" style="display: none">Admin</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="admin">
+      <div class="imgcontainer">
+        <img
+          src="src/img/logo.png"
+          alt="Avatar"
+          class="avatar"
+          style="width: 250px"
+        />
+      </div>
+      <form id="adminLoginForm">
+        Email: <input type="email" name="email" required /><br />
+        Senha: <input type="password" name="password" required /><br />
+        <button type="submit">Login</button>
+      </form>
+
+      <script>
+        document
+          .getElementById("adminLoginForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            fetch("/admin/login", {
+              method: "POST",
+              body: new URLSearchParams(formData),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.success) {
+                  window.location.href = "/admin/dash.html";
+                } else {
+                  alert("Login falhou");
+                }
+              });
+          });
+      </script>
+    </div>
+  </body>
+</html>

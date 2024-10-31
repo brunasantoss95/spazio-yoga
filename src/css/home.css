@@ -1,0 +1,85 @@
+.img-fundo {
+  height: 100vg;
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  -ms-flex: 70%;
+  flex: 70%;
+  background-color: black;
+  padding: 20px;
+}
+
+.home {
+  display: flex;
+  position: relative;
+  min-height: calc(100vh - 80px);
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.row2 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+p .side {
+  font-size: 20px;
+  margin-right: 150px;
+  color: #c4b7f9;
+  text-align: justify;
+  margin-right: 150px;
+}
+
+.side {
+  -ms-flex: 30%;
+  flex: 30%;
+  background-color: black;
+  padding: 20px;
+}
+
+.side2 {
+  -ms-flex: 30%;
+  flex: 30%;
+  background-color: black;
+  padding: 20px;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/*Responsivo*/
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .row2 {
+    flex-direction: column;
+  }
+}

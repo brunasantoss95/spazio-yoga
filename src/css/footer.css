@@ -1,0 +1,12 @@
+.footer {
+  padding: 50px;
+  text-align: center;
+  background-color: #37314a;
+  background-image: linear-gradient(to top, #37314a, black);
+}
+
+.redes {
+  text-align: left;
+  padding: 10px 200px;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,17 @@
+.fakeimg1 {
+  background-color: #aaa;
+  padding: 150px 250px;
+  margin: 50px 150px;
+  background-image: url("../img/foto3.jpg");
+  opacity: 0.5;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left;
+  border-radius: 5px;
+}
+
+.sobre {
+  text-align: center;
+  margin-right: 150px;
+}

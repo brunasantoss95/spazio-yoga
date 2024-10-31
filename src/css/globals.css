@@ -1,0 +1,37 @@
+/* .gabriela-regular {
+  font-family: "Gabriela", serif;
+  font-weight: 400;
+  font-style: normal;
+} */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gabriela", serif;
+  background-color: black;
+  margin: 0;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  color: #e8acfd;
+}
+h2 {
+  color: #9a9fe3;
+  font-size: 40px;
+}
+
+h3 {
+  color: #e8acfd;
+  font-size: 25px;
+  margin-left: 150px;
+}
+
+p {
+  color: #c4b7f9;
+  font-size: 15px;
+  text-align: justify;
+}
