@@ -35,3 +35,14 @@ p {
   font-size: 15px;
   text-align: justify;
 }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
