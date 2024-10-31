@@ -14,6 +14,9 @@
     <title>Spazio Yoga</title>
     <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon" />
 
+    <!-- scripts -->
+    <script defer src="./js/admin.js"></script>
+
     <!-- fontes-->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
@@ -22,17 +25,18 @@
       rel="stylesheet"
     /> -->
 
-    <link rel="stylesheet" href="./src/css/about.css" />
-    <link rel="stylesheet" href="./src/css/admin.css" />
-    <link rel="stylesheet" href="./src/css/schedule.css" />
-    <link rel="stylesheet" href="./src/css/animations.css" />
-    <link rel="stylesheet" href="./src/css/category.css" />
-    <link rel="stylesheet" href="./src/css/fonts.css" />
-    <link rel="stylesheet" href="./src/css/footer.css" />
-    <link rel="stylesheet" href="./src/css/globals.css" />
-    <link rel="stylesheet" href="./src/css/header.css" />
-    <link rel="stylesheet" href="./src/css/home.css" />
-    <link rel="stylesheet" href="./src/css/ui.css" />
+    <!-- estilos -->
+    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="stylesheet" href="./css/schedule.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/category.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/globals.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/ui.css" />
   </head>
 
   <body>
@@ -40,13 +44,10 @@
     <header id="header">
       <nav class="flex">
         <a href="#" class="navbar-left menu"
-          ><img src="src/img/logo.png" style="width: 75px"
+          ><img src="./img/logo.png" style="width: 75px"
         /></a>
         <ul>
-          <li><a href="index.html">Voltar</a></li>
-          <li>
-            <a href="admin.html" id="admin-link" style="display: none">Admin</a>
-          </li>
+          <li><a href="../index.html">Voltar</a></li>
         </ul>
       </nav>
     </header>
@@ -54,38 +55,17 @@
     <div class="admin">
       <div class="imgcontainer">
         <img
-          src="src/img/logo.png"
+          src="./img/logo.png"
           alt="Avatar"
           class="avatar"
           style="width: 250px"
         />
       </div>
-      <form id="adminLoginForm">
+      <form id="adminLoginForm" data-element="adminLoginForm">
         Email: <input type="email" name="email" required /><br />
         Senha: <input type="password" name="password" required /><br />
         <button type="submit">Login</button>
       </form>
-
-      <script>
-        document
-          .getElementById("adminLoginForm")
-          .addEventListener("submit", function (e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-            fetch("/admin/login", {
-              method: "POST",
-              body: new URLSearchParams(formData),
-            })
-              .then((response) => response.json())
-              .then((data) => {
-                if (data.success) {
-                  window.location.href = "/admin/dash.html";
-                } else {
-                  alert("Login falhou");
-                }
-              });
-          });
-      </script>
     </div>
   </body>
 </html>
