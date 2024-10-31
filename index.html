@@ -16,6 +16,7 @@
 
     <!-- scripts -->
     <script defer src="./src/js/script.js"></script>
+    <script defer src="./src/js/scheduleClass.js"></script>
     <script defer src="./server/server.js"></script>
 
     <!-- fontes -->
@@ -260,35 +261,6 @@
             </button>
           </div>
         </form>
-
-        <script>
-          const data = document.getElementById("agendarForm");
-
-          const handleSubmit = async (e) => {
-            e.preventDefault();
-
-            const nome = e.target.nome.value;
-            const telefone = e.target.telefone.value;
-            const email = e.target.email.value;
-
-            const data = { nome, telefone, email };
-
-            try {
-              const response = await fetch("http://localhost:8000/cadastrar", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-              });
-            } catch (error) {
-              console.log("error: ", error);
-            }
-
-            e.target.reset()
-          };
-
-          data.addEventListener("submit", handleSubmit);
-        </script>
-        <br />
       </div>
     </div>
 
