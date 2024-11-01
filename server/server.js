@@ -29,6 +29,7 @@ app.post("/cadastrar", async (req, res) => {
   try {
     const { nome, telefone, email } = req.body;
     const user = new User({ nome, telefone, email });
+    console.log('user', user)
     await user.save();
     res.json({ success: true });
   } catch (error) {
