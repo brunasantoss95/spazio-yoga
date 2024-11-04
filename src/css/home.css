@@ -58,20 +58,12 @@ p .side {
   padding: 20px;
 }
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
-}
-
 /* Hide the images by default */
 .mySlides {
   display: none;
 }
 
 /*Responsivo*/
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
   .row {
     flex-direction: column;

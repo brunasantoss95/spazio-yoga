@@ -1,0 +1,20 @@
+.planos {
+    background-color: #000000;
+    margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    border-radius: 5px;
+  }
+  
+  .planos img {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    float:none;
+    border-radius: 5px;
+  }
+  
+
+  

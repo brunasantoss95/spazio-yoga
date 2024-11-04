@@ -36,6 +36,7 @@
     <link rel="stylesheet" href="./src/css/globals.css" />
     <link rel="stylesheet" href="./src/css/header.css" />
     <link rel="stylesheet" href="./src/css/home.css" />
+    <link rel="stylesheet" href="./src/css/plan.css" />
     <link rel="stylesheet" href="./src/css/ui.css" />
   </head>
 
@@ -51,9 +52,8 @@
           <li><a href="#sobre">Sobre Nós</a></li>
           <li><a href="#modalidades">Modalidades</a></li>
           <li><a href="#agendar">Agendar Aula</a></li>
-          <li>
-            <a href="./src/admin.html" id="admin-link" >Admin</a>
-          </li>
+          <li><a href="#planos">Planos</a></li>
+          <li><a href="./src/admin.html" id="admin-link" >Admin</a></li>
         </ul>
       </nav>
     </header>
@@ -155,67 +155,18 @@
 
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-
-    <!-- Slideshow container -->
-   <!-- <div class="slideshow-container">   
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="./src/img/foto1.jpg" style="width:100%">
-        <div class="text"></div>
-      </div>
-  
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="./src/img/aula03.jpg" style="width:100%">
-        <div class="text"></div>
-      </div>
-  
-      <div class="mySlides fade">
-        <div class="numbertext"></div>
-        <img src="./src/img/aula01.jpg" style="width:100%">
-        <div class="text"></div>
-  
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="./src/img/aula04.jpg" style="width:100%">
-          <div class="text"></div>
-        </div>
-  
-        
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-      <br>
-  
-      
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-      </div>
-    -->
 
     <!-- agendar -->
     <div class="agendar" id="agendar">
-      <img src="src/img/yoga.png" />
-      <br />
-      <h1>AULA EXPERIMENTAL</h1>
-      <br />
-      <p>Venha desfrutar dessa experiência</p>
-      <p>de auto conhecimento e auto cuidado.</p>
-      <br />
-      <h1>Clique no botão abaixo.</h1>
+      <img src="src/img/aulaexp.png" />
+      
     </div>
 
     <!-- Botao agendar-->
     <div class="btn-agendar">
       <!-- Botão para abrir o formulário de agendar modal -->
       <button onclick="document.getElementById('id01').style.display='block'">
-        AGENDAR
+        CADASTRAR
       </button>
     </div>
 
@@ -236,26 +187,33 @@
         </div>
 
         <form method="POST" id="agendarForm">
-          Nome: <input type="text" name="nome" required /><br />
-          Telefone: <input type="tel" name="telefone" required /><br />
-          Email: <input type="email" name="email" required /><br />
+          Nome:<br>
+          <input type="text" name="nome" required /><br />
+          Telefone:<br>
+           <input type="tel" name="telefone" required /><br />
+          Email:<br>
+           <input type="email" name="email" required /><br />
+           <br>
 
           <div class="btn-modal">
             <button type="submit" style="background-color: rgb(244, 97, 202)">
               Cadastrar
             </button>
-            <button
-              type="button"
-              style="background-color: rgb(39, 6, 39)"
-              class="cancelbtn"
-              data-element="close"
-            >
-              Fechar
-            </button>
           </div>
         </form>
       </div>
     </div>
+<br>
+<br>
+      <!-- planos -->
+      <div class="planos" id="planos">
+        <h2 id="plan" style="text-align: center">
+          Planos
+        </h2>
+        <br>
+        <img src="src/img/planos.png"/>
+        
+      </div>
 
     <br />
     <br />
@@ -266,7 +224,8 @@
     <!-- footer -->
     <div class="footer">
       <p>
-        <!-- MAPA ENDEREÇO -->
+        <!-- mapa endereço-->
+         <br>
         <iframe
           style="float: right; margin-right: 200px; border-radius: 5px"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13865.98687563066!2d-51.142832767629145!3d-29.676375412281587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95194251364dc5e9%3A0xd7dd3c17203b1805!2sBourbon%20Shopping%20Novo%20Hamburgo!5e0!3m2!1spt-BR!2sbr!4v1686063077347!5m2!1spt-BR!2sbr"
@@ -275,14 +234,15 @@
           referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </p>
-      <!-- ENDEREÇO E TELEFONE -->
+
+      <!-- endereço e telefone -->
       <p style="margin-left: 200px; line-height: 40px">
         Av Nações Unidas 2001, Rio Branco<br />
         Novo Hamburgo - RS, 93320-021 <br />
-        (51) 4004-1828<br />
+        (51) 9999-9999<br />
       </p>
 
-      <!-- ICONES -->
+      <!-- icones -->
       <div class="redes">
         <a
           href="https://www.instagram.com/brunasantosmaq/"
@@ -301,12 +261,13 @@
           style="font-size: 38px; padding: 10px; text-decoration: none"
           class="fa-brands fa-whatsapp"
         ></a>
+        <br>
+        <!-- direitos autorais-->
+        <p style="text-align: center; font-size: 12px">
+          © SPAZIO YOGA - 2024 - Todos os direitos reservados.
+        </p>
       </div>
-
-      <!-- DIREITOS AUTORAIS -->
-      <p style="text-align: center; font-size: 12px">
-        © SPAZIO YOGA - 2024 - Todos os direitos reservados.
-      </p>
+      <br>
     </div>
   </body>
 </html>

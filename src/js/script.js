@@ -5,7 +5,7 @@ window.addEventListener("scroll", function () {
   header.classList.toggle("rolagem", window.scrollY > 0);
 });
 
-// Close modal
+// Fechar modal
 const modal = document.querySelector('[data-element="modal"]');
 const cancelbtn = document.querySelectorAll('[data-element="close"]');
 
@@ -15,23 +15,7 @@ cancelbtn.forEach((btn) => {
   btn.addEventListener("click", () => closeModal());
 });
 
-// When the user clicks anywhere outside of the modal, close it
+// Quando o usuário clicar em qualquer lugar fora do modal, feche-o
 window.onclick = function (event) {
   if (event.target == modal) closeModal();
 };
-
-/*slides
-  let slideIndex = 0;
-  showSlides();
-  
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 4000); // Change image every 2 seconds
-  }*/
