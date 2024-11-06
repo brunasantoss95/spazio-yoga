@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Spazio Yoga</title>
+    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon" />
+
+    <!-- scripts -->
+    <script defer src="./js/adminLogin.js"></script>
+
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- estilos -->
+    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/admin.css" />
+    <link rel="stylesheet" href="./css/schedule.css" />
+    <link rel="stylesheet" href="./css/animations.css" />
+    <link rel="stylesheet" href="./css/category.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="./css/globals.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./css/ui.css" />
+  </head>
+
+  <body>
+    <!-- menu -->
+    <header id="header">
+      <nav class="flex">
+        <a href="#" class="navbar-left menu"
+          ><img src="./img/logo.png" style="width: 75px"
+        /></a>
+        <ul>
+          <li><a href="../index.html">Voltar</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="admin">
+      <div class="imgcontainer">
+        <img
+          src="./img/logo.png"
+          alt="Avatar"
+          class="avatar"
+          style="width: 250px"
+        />
+      </div>
+      <form id="adminLoginForm" data-element="adminLoginForm">
+        Email: <input type="email" name="email" required /><br />
+        Senha: <input type="password" name="password" required /><br />
+        <br />
+        
+        <button type="submit" style="background-color: rgb(244, 97, 202)">
+          Login
+        </button>
+
+        <p>Ainda não tem cadastro? 
+          <a href="../src/adminRegister.html"> Cadastrar</a>
+        </p>
+      </form>
+    </div>
+  </body>
+</html>

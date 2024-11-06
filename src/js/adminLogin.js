@@ -4,7 +4,12 @@ const adminLoginForm = document.querySelector(
 
 const handleAdminLogin = async (e) => {
   e.preventDefault();
-  
+
+  const email = e.target.email.value;
+  const password = e.target.password.value;
+
+  const data = { email, password };
+
   try {
     const response = await fetch("http://localhost:8000/admin/login", {
       method: "POST",
@@ -12,11 +17,13 @@ const handleAdminLogin = async (e) => {
       body: JSON.stringify(data),
     });
 
-    if (response.ok) window.location.href = "/admin/dash.html";
+    if (response.ok) window.location.href = "/src/dash.html";
   } catch (error) {
     console.log(error);
-    alert("Login falhou");
+    alert("Login falhou!");
   }
+
+  e.target.reset();
 };
 
 adminLoginForm.addEventListener("submit", handleAdminLogin);

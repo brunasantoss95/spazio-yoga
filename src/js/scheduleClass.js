@@ -1,4 +1,4 @@
-const data = document.getElementById("agendarForm");
+const data = document.querySelector('[data-element="agendarForm"]');
 
 const handleScheduleClass = async (e) => {
   e.preventDefault();
