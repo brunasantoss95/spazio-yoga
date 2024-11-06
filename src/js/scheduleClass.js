@@ -7,6 +7,9 @@ const handleScheduleClass = async (e) => {
   const telefone = e.target.telefone.value;
   const email = e.target.email.value;
 
+  const isAdmin = e.target.dataset.formType === "admin";
+  const endpoint = isAdmin ? "http://localhost:8000/admin/login" : "http://localhost:8000/cadastrar";
+  
   const data = { nome, telefone, email };
 
   try {
@@ -26,3 +29,4 @@ const handleScheduleClass = async (e) => {
 };
 
 data.addEventListener("submit", handleScheduleClass);
+
