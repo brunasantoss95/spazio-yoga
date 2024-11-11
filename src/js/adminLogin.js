@@ -17,7 +17,10 @@ const handleAdminLogin = async (e) => {
       body: JSON.stringify(data),
     });
 
-    if (response.ok) window.location.href = "/src/dash.html";
+    if (response.ok) {
+      localStorage.setItem("adminToken", data.email);
+      window.location.href = "/src/dash.html";
+    }
   } catch (error) {
     console.log(error);
     alert("Login falhou!");

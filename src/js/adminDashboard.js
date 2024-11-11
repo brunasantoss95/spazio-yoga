@@ -18,7 +18,7 @@ try {
 const checkAuth = () => {
   const token = localStorage.getItem('adminToken');
   if (!token) {
-    window.location.href = '/adminLogin.html';
+    window.location.href = "/src/adminLogin.html";
     return false;
   }
   return true;
@@ -109,20 +109,20 @@ const initDashboard = () => {
   if (!checkAuth()) return;
 
   // Carrega dados iniciais
-  loadUsers();
+  // loadUsers();
 
   // Configura busca
-  if (dashboardEl.searchInput) {
-    dashboardEl.searchInput.addEventListener('input', (e) => {
-      searchUsers(e.target.value);
-    });
-  }
+  // if (dashboardEl.searchInput) {
+  //   dashboardEl.searchInput.addEventListener('input', (e) => {
+  //     searchUsers(e.target.value);
+  //   });
+  // }
 
   // Configura logout
   if (dashboardEl.logoutBtn) {
     dashboardEl.logoutBtn.addEventListener('click', () => {
       localStorage.removeItem('adminToken');
-      window.location.href = '/adminLogin.html';
+      window.location.href = '/src/adminLogin.html';
     });
   }
 };
