@@ -34,8 +34,6 @@ const formatDate = (dateString) => {
 
 // Renderiza lista de usuários
 const renderUsers = (users = []) => {
-  console.log(dashboardEl.usersList);
-
   if (!dashboardEl.usersList) return;
 
   dashboardEl.usersList.innerHTML = users.length
@@ -102,11 +100,11 @@ const initDashboard = () => {
   loadUsers();
 
   // Configura busca
-  // if (dashboardEl.searchInput) {
-  //   dashboardEl.searchInput.addEventListener('input', (e) => {
-  //     searchUsers(e.target.value);
-  //   });
-  // }
+  if (dashboardEl.searchInput) {
+    dashboardEl.searchInput.addEventListener("change", (e) => {
+      searchUsers(e.target.value);
+    });
+  }
 
   // Configura logout
   if (dashboardEl.logoutBtn) {
