@@ -72,13 +72,14 @@ app.post("/admin/login", async (req, res) => {
   }
 });
 
-// Rota protegida para listar usuários
+// Rota para listar usuários
 app.get("/admin/users", async (req, res) => {
-  if (!req.session.adminId) {
-    return res.status(401).json({ error: "Não autorizado" });
+  try {
+    const users = await User.find({});
+    return res.status(200).json(users);
+  } catch (error) {
+    return res.status(400).json({ error });
   }
-  const users = await User.find({});
-  res.json(users);
 });
 
 app.listen(port, () => {

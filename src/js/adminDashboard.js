@@ -1,22 +1,7 @@
-/* CODIGO QUE ESTAVA ANTES 10/11/2024
-const clientsList = document.querySelector('[data-element="clientsList"]');
-
-try {
-  const response = await fetch("http://localhost:8000/admin/users");
-  const users = response.json();
-
-  users.forEach((user) => {
-    clientsList.innerHTML += `<p>${user.nome} - ${user.email} - ${user.telefone}</p>`;
-  });
-} catch (error) {
-  console.log(error);
-}*/
-
-//CÓDIGO DA IA
+const token = localStorage.getItem("adminToken");
 
 // Verifica se o usuário está autenticado
 const checkAuth = () => {
-  const token = localStorage.getItem('adminToken');
   if (!token) {
     window.location.href = "/src/adminLogin.html";
     return false;
@@ -38,27 +23,33 @@ let filteredUsers = [];
 
 // Formata data para exibição
 const formatDate = (dateString) => {
-  return new Date(dateString).toLocaleDateString('pt-BR', {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit'
+  return new Date(dateString).toLocaleDateString("pt-BR", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
   });
 };
 
 // Renderiza lista de usuários
 const renderUsers = (usersList = []) => {
   if (!dashboardEl.usersList) return;
-  
-  dashboardEl.usersList.innerHTML = usersList.length ? usersList.map(user => `
+
+  dashboardEl.usersList.innerHTML = usersList.length
+    ? usersList
+        .map(
+          (user) => `
     <tr class="border-b hover:bg-gray-50">
-      <td class="px-4 py-3">${user.nome || ''}</td>
-      <td class="px-4 py-3">${user.email || ''}</td>
-      <td class="px-4 py-3">${user.telefone || ''}</td>
+      <td class="px-4 py-3">${user.nome || ""}</td>
+      <td class="px-4 py-3">${user.email || ""}</td>
+      <td class="px-4 py-3">${user.telefone || ""}</td>
       <td class="px-4 py-3">${formatDate(user.dataCadastro || new Date())}</td>
     </tr>
-  `).join('') : `
+  `
+        )
+        .join("")
+    : `
     <tr>
       <td colspan="4" class="px-4 py-3 text-center text-gray-500">
         Nenhum cadastro encontrado
@@ -74,10 +65,11 @@ const renderUsers = (usersList = []) => {
 
 // Busca usuários
 const searchUsers = (searchTerm) => {
-  filteredUsers = users.filter(user => 
-    user.nome?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.telefone?.includes(searchTerm)
+  filteredUsers = users.filter(
+    (user) =>
+      user.nome?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.email?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      user.telefone?.includes(searchTerm)
   );
   renderUsers(filteredUsers);
 };
@@ -85,22 +77,18 @@ const searchUsers = (searchTerm) => {
 // Carrega dados dos usuários
 const loadUsers = async () => {
   try {
-    const response = await fetch('http://localhost:8000/admin/users', {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('adminToken')}`
-      }
-    });
+    const response = await fetch("http://localhost:8000/admin/users");
 
-    if (!response.ok) {
-      throw new Error('Falha ao carregar usuários');
+    if (!token || !response.ok) {
+      alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
     }
 
     users = await response.json();
     filteredUsers = [...users];
     renderUsers(users);
   } catch (error) {
-    console.error('Erro ao carregar usuários:', error);
-    alert('Erro ao carregar lista de usuários. Por favor, tente novamente.');
+    console.error("Erro ao carregar usuários:", error);
+    alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
   }
 };
 
@@ -109,7 +97,7 @@ const initDashboard = () => {
   if (!checkAuth()) return;
 
   // Carrega dados iniciais
-  // loadUsers();
+  loadUsers();
 
   // Configura busca
   // if (dashboardEl.searchInput) {
@@ -120,12 +108,12 @@ const initDashboard = () => {
 
   // Configura logout
   if (dashboardEl.logoutBtn) {
-    dashboardEl.logoutBtn.addEventListener('click', () => {
-      localStorage.removeItem('adminToken');
-      window.location.href = '/src/adminLogin.html';
+    dashboardEl.logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("adminToken");
+      window.location.href = "/src/adminLogin.html";
     });
   }
 };
 
 // Inicializa dashboard
-document.addEventListener('DOMContentLoaded', initDashboard);
+document.addEventListener("DOMContentLoaded", initDashboard);
