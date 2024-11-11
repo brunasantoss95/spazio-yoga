@@ -3,7 +3,6 @@
   background-position: 100% 0;
   background-repeat: no-repeat;
   background-size: cover;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,11 +55,6 @@ p .side {
   flex: 30%;
   background-color: black;
   padding: 20px;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
 }
 
 /*Responsivo*/

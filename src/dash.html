@@ -17,15 +17,13 @@
      <!-- scripts -->
     <script defer src="./js/adminDashboard.js"></script>
 
-    <!-- fontes-->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap"
-      rel="stylesheet"
-    /> -->
+   <!-- fontes -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
 
     <!-- estilos -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/about.css" />
     <link rel="stylesheet" href="./css/admin.css" />
     <link rel="stylesheet" href="./css/schedule.css" />
@@ -36,19 +34,110 @@
     <link rel="stylesheet" href="./css/globals.css" />
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/home.css" />
+    <link rel="stylesheet" href="./src/css/plan.css" />
     <link rel="stylesheet" href="./css/ui.css" />
   </head>
 
   <body>
-    <!-- menu -->
-    <header id="header">
-      <nav class="flex">
-        <a href="#" class="navbar-left menu">
-          <img src="./img/logo.png" style="width: 75px" />
-        </a>
-      </nav>
-    </header>
-    <h1>Dashboard do Administrador</h1>
-    <div id="userList" data-element="clientsList"></div>
+   <!-- menu -->
+   <header id="header">
+    <h1>DASHBOARD DO ADMINISTRADOR</h1>
+    <nav class="flex">
+      <a href="#" class="navbar-left menu"></a>
+      <ul>
+        <li><a href="../index.html">Voltar</a></li>
+      </ul>
+      
+    </nav>
+  </header>
+  <div class="imgcontainer">
+    <img
+      src="./img/logo.png"
+      alt="Avatar"
+      class="avatar"
+      style="width: 250px"
+    />
+  </div>
+
+  <!-- CODIGO QUE ESTAVA ANTES 10/11/2024
+
+      <div class="container">
+    <h2 style="font-size: 25px; text-align: center;">- Cadastro de Futuros Alunos -</h2>    
+    <table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+-->
+
+<!--CÓDIGO DA IA-->
+<!-- admin-dashboard.html -->
+<div class="container mx-auto p-6">
+  <header class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">Painel Administrativo</h1>
+    <button data-element="logoutBtn" class="px-4 py-2 bg-red-500 text-white rounded">
+      Sair
+    </button>
+  </header>
+
+  <div class="mb-6">
+    <input 
+      type="text" 
+      data-element="searchInput"
+      placeholder="Buscar cadastros..." 
+      class="w-full px-4 py-2 border rounded"
+    >
+  </div>
+
+  <div class="bg-white rounded-lg shadow overflow-hidden">
+    <div class="px-4 py-3 border-b">
+      <h2 class="font-semibold">
+        Cadastros (<span data-element="totalUsers">0</span>)
+      </h2>
+    </div>
+    
+    <table class="w-full">
+      <thead class="bg-gray-50">
+        <tr>
+          <th class="px-4 py-3 text-left">Nome</th>
+          <th class="px-4 py-3 text-left">Email</th>
+          <th class="px-4 py-3 text-left">Telefone</th>
+          <th class="px-4 py-3 text-left">Data</th>
+        </tr>
+      </thead>
+      <tbody data-element="usersList">
+        <!-- Lista de usuários será inserida aqui -->
+      </tbody>
+    </table>
+  </div>
+</div>  
+
   </body>
 </html>

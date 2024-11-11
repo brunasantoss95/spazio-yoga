@@ -12,7 +12,8 @@
     />
 
     <title>Spazio Yoga</title>
-    <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="/src/img/logo.png" type="image/x-icon" />
+    
 
     <!-- scripts -->
     <script defer src="./js/adminLogin.js"></script>
@@ -22,8 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet"/>
 
     <!-- estilos -->
     <link rel="stylesheet" href="./css/about.css" />
@@ -66,11 +66,13 @@
         Senha: <input type="password" name="password" required /><br />
         <br />
         
+        <div class="btn-admin">
         <button type="submit" style="background-color: rgb(244, 97, 202)">
           Login
         </button>
+        </div>
 
-        <p>Ainda não tem cadastro? 
+        <p style="text-align: center; font-size: 12px;">Ainda não tem cadastro? <br>
           <a href="../src/adminRegister.html"> Cadastrar</a>
         </p>
       </form>

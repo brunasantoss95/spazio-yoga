@@ -1,0 +1,7 @@
+.dash{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    padding: 50px 20px;
+    border-bottom: 1px solid #ccc;
+}
