@@ -33,14 +33,16 @@ const formatDate = (dateString) => {
 };
 
 // Renderiza lista de usuários
-const renderUsers = (usersList = []) => {
+const renderUsers = (users = []) => {
+  console.log(dashboardEl.usersList);
+
   if (!dashboardEl.usersList) return;
 
-  dashboardEl.usersList.innerHTML = usersList.length
-    ? usersList
+  dashboardEl.usersList.innerHTML = users.length
+    ? users
         .map(
           (user) => `
-    <tr class="border-b hover:bg-gray-50">
+    <tr class="border-b text-dark hover:bg-gray-50">
       <td class="px-4 py-3">${user.nome || ""}</td>
       <td class="px-4 py-3">${user.email || ""}</td>
       <td class="px-4 py-3">${user.telefone || ""}</td>
@@ -51,15 +53,15 @@ const renderUsers = (usersList = []) => {
         .join("")
     : `
     <tr>
-      <td colspan="4" class="px-4 py-3 text-center text-gray-500">
+      <td colspan="4"">
         Nenhum cadastro encontrado
       </td>
     </tr>
-  `;
+    `;
 
   // Atualiza contador de usuários
   if (dashboardEl.totalUsers) {
-    dashboardEl.totalUsers.textContent = usersList.length;
+    dashboardEl.totalUsers.textContent = users.length;
   }
 };
 
@@ -80,7 +82,7 @@ const loadUsers = async () => {
     const response = await fetch("http://localhost:8000/admin/users");
 
     if (!token || !response.ok) {
-      alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
+      // alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
     }
 
     users = await response.json();
@@ -88,7 +90,7 @@ const loadUsers = async () => {
     renderUsers(users);
   } catch (error) {
     console.error("Erro ao carregar usuários:", error);
-    alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
+    // alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
   }
 };
 
