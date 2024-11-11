@@ -50,7 +50,7 @@ const renderUsers = (users = []) => {
         )
         .join("")
     : `
-    <tr>
+    <tr class="text-dark">
       <td colspan="4"">
         Nenhum cadastro encontrado
       </td>
@@ -80,7 +80,7 @@ const loadUsers = async () => {
     const response = await fetch("http://localhost:8000/admin/users");
 
     if (!token || !response.ok) {
-      // alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
+      alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
     }
 
     users = await response.json();
@@ -88,7 +88,7 @@ const loadUsers = async () => {
     renderUsers(users);
   } catch (error) {
     console.error("Erro ao carregar usuários:", error);
-    // alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
+    alert("Erro ao carregar lista de usuários. Por favor, tente novamente.");
   }
 };
 
